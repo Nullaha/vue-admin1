@@ -1,3 +1,5 @@
+// 因为vue-cli4简化了。所以找不到webpack.config.js。
+// 需要手动创建vue.config.js，在这个文件中添加配置（这个在运行的时候会去和隐藏的webpack.config.js合并）
 'use strict'
 const path = require('path')
 const defaultSettings = require('./src/settings.js')

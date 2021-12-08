@@ -1,7 +1,8 @@
+//配置路由相关信息
 import Vue from 'vue'
-import Router from 'vue-router'
+import Router from 'vue-router' //1
 
-Vue.use(Router)
+Vue.use(Router) //2
 
 /* Layout */
 import Layout from '@/layout'
@@ -48,7 +49,7 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/dashboard',
     children: [{
-      path: 'dashboard',
+      path: 'dashboard', // TODO 这里的路由嵌套是/dashboard/dashboard吗?
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
       meta: { title: 'Dashboard', icon: 'dashboard' }
@@ -58,7 +59,7 @@ export const constantRoutes = [
   {
     path: '/example',
     component: Layout,
-    redirect: '/example/table',
+    // redirect: '/example/table', // TODO 这个 redirect有啥用？
     name: 'Example',
     meta: { title: 'Example', icon: 'el-icon-s-help' },
     children: [
@@ -179,3 +180,16 @@ export function resetRouter() {
 }
 
 export default router
+
+
+
+// import Vue from 'vue'
+// import Router from 'vue-router'
+// Vue.use(Router);
+// const routes=[
+//   // 配置组件和路由之间的映射关系
+// ];
+// const router=new Router({
+//   routes,
+// });
+// export default router
